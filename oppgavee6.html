@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./styles/styles.css" rel="Stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <title>Oppgave 6</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="likes-frame">
+        <div class="text-frame">
+          <p>Antall retter jeg liker:</p>
+          <p id="likes-number"><i class="far fa-heart fa-3x"></i>0</p>
+        </div>
+        <div class="button">
+          <input type="button" value="Legg til" id="likes-btn" />
+        </div>
+      </div>
+
+      <div class="list-frame">
+        <p id="header">Jeg liker...</p>
+        <ul id="list"></ul>
+      </div>
+
+      <div class="dislikes-frame">
+        <div class="text-frame">
+          <p>Antall retter jeg ikke liker:</p>
+          <p id="dislikes-number"><i class="fas fa-heart-broken fa-3x"></i>0</p>
+        </div>
+        <div class="button">
+          <input type="button" value="Legg til" id="dislikes-btn" />
+        </div>
+      </div>
+      <div class="dislikes-list-frame">
+        <p id="header">Jeg liker ikke...</p>
+        <ul id="dislikes-list"></ul>
+      </div>
+    </div>
+
+    <script>
+      let counter = 0;
+
+      let number = document.getElementById("likes-number");
+      let likesBtn = document.getElementById("likes-btn");
+      let foodLikes = document.getElementById("list");
+
+      function foodLikesResult() {
+        counter++;
+        number.innerHTML = counter;
+        let result = prompt("Skriv inn en rett du liker:");
+        foodLikes.innerHTML += `<li>${result}</li>`;
+      }
+
+      likesBtn.onclick = foodLikesResult;
+
+      let counterTwo = 0;
+
+      let dislikeNumber = document.getElementById("dislikes-number");
+      let dislikesBtn = document.getElementById("dislikes-btn");
+      let foodDislikes = document.getElementById("dislikes-list");
+
+      function foodDislikesResult() {
+        counterTwo++;
+        dislikeNumber.innerHTML = counterTwo;
+        let dislikeResult = prompt("Skriv inn en rett du ikke liker:");
+        foodDislikes.innerHTML += `<li>${dislikeResult}</li>`;
+      }
+
+      dislikesBtn.onclick = foodDislikesResult;
+    </script>
+  </body>
+</html>

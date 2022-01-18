@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>Oppgave 5</h3>
+
+    <p>Antall ganger trykket:</p>
+
+    <p id="number">0</p>
+
+    <input type="button" value="+" id="plus-btn" />
+    <input type="button" value="-" id="minus-btn" />
+
+    <ul id="price"></ul>
+
+    <script>
+      let counter = 0;
+      let total = document.getElementById("number");
+      let plusBtn = document.getElementById("plus-btn");
+      let minusBtn = document.getElementById("minus-btn");
+      let award = document.getElementById("price");
+
+      function clickManiac() {
+        counter++;
+        total.innerHTML = counter;
+        if (counter === 5) {
+          award.innerHTML += "<li>Premie!</li>";
+        }
+        if (counter === 10) {
+          award.innerHTML += "<li>Premie!</li>";
+          total.style.color = "red";
+        }
+        if (counter === 15) {
+          award.innerHTML += "<li>Premie!</li>";
+        }
+        if (counter === 20) {
+          award.innerHTML += "<li>Premie!</li>";
+        }
+      }
+
+      function clickManiacMinus() {
+        counter--;
+        total.innerHTML = counter;
+        if (counter === -5) {
+          award.innerHTML = "<li>Premie!</li>";
+        }
+      }
+
+      plusBtn.onclick = clickManiac;
+      minusBtn.onclick = clickManiacMinus;
+    </script>
+  </body>
+</html>
