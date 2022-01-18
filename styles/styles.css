@@ -145,9 +145,6 @@ i {
   margin-top: 82px;
 }
 
-#dislike-header {
-}
-
 ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
